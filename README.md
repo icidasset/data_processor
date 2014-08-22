@@ -21,12 +21,13 @@ _File structure:_
 /example_path/en/pages/index.md
 ```
 
-_Output:_
+_JSON Output: (by using the code below)_
 
 ```json
 {
   "en": {
     "is_directory": true,
+    "locale": "en",
     
     "base": {
       "value_from_base_yaml": "1"
@@ -36,7 +37,9 @@ _Output:_
       "is_directory": true,
       
       "index": {
-        "value_from_index_yaml": "1",
+        "title": "Homepage Title",
+        "slug": "homepage-title",
+        
         "parsed_markdown": "<p>Parsed markdown from index.md</p>",
         
         "is_yaml": true,
