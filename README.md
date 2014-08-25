@@ -50,6 +50,10 @@ _JSON Output: (by using the code below)_
 }
 ```
 
+_Ruby Hash:_
+
+Pretty much the same as the JSON output, strings as keys, not symbols.
+
 
 
 ## Usage
