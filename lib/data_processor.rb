@@ -24,6 +24,11 @@ class DataProcessor
   #
   #  Markdown
   #
+  def self.markdown_renderer
+    Redcarpet::Render::HTML
+  end
+
+
   def create_markdown_parser
     @markdown_parser = Redcarpet::Markdown.new(
       DataProcessor::markdown_renderer,
@@ -37,8 +42,8 @@ class DataProcessor
   end
 
 
-  def self.markdown_renderer
-    Redcarpet::Render::HTML
+  def parse_markdown(string)
+    @markdown_parser.render(string)
   end
 
 end

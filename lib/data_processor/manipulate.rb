@@ -25,7 +25,7 @@ class DataProcessor
         # ie. if the object is found
         # + override object with return value of block if needed
         if obj && (counter == path_split.length)
-          return_value = yield(obj)
+          return_value = yield(obj, parent_obj)
           parent_obj[path_split.last] = return_value if override
         end
       end

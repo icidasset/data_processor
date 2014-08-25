@@ -30,7 +30,7 @@ class DataProcessor
         elsif filename.end_with?(".md")
           without_ext = File.basename(filename, ".md")
           file = File.open(combined_path, "r")
-          parsed_markdown = @markdown_parser.render(file.read)
+          parsed_markdown = self.parse_markdown(file.read)
           file.close
 
           data_hash[without_ext] ||= {}
