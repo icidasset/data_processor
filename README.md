@@ -68,8 +68,9 @@ d = DataProcessor.new("/")
 d.import("example_path/")
 
 # Manipulate data
-# -> 1st arg, the path without file extension
-# -> 2nd arg, block to execute manipulations in
+# -> 1st arg, the path without file extension (string)
+# -> 2nd arg, override, obj will be set to the return value of the block (boolean, optional)
+# -> block to execute manipulations in
 d.manipulate("en") { |obj| obj["locale"] = "en" }
 d.manipulate("en/pages/index") { |obj| obj["slug"] = obj["title"].to_slug }
 

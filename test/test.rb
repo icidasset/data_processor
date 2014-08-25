@@ -41,6 +41,7 @@ class TestDataProcessor < MiniTest::Unit::TestCase
 
     # manipulate
     @d.manipulate("en") { |obj| obj["locale"] = "en" }
+    @d.manipulate("en/pages", true) { |obj| obj.to_a }
 
     # get data
     data = @d.get_data
@@ -49,6 +50,11 @@ class TestDataProcessor < MiniTest::Unit::TestCase
     assert_equal(
       "en",
       data["en"]["locale"]
+    )
+
+    assert_kind_of(
+      Array,
+      data["en"]["pages"]
     )
   end
 
