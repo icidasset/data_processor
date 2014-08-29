@@ -79,6 +79,14 @@ d.get_data # ruby hash
 d.output_json # json
 ```
 
+[RubyGem](https://rubygems.org/gems/data_processor)
+
+```ruby
+# Gemfile
+
+gem 'data_processor'
+```
+
 
 
 ## Markdown
