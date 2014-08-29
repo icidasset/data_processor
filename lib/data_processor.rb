@@ -16,8 +16,8 @@ class DataProcessor
   include DataProcessor::Output
 
   def initialize(initial_path="./")
+    @initial_path = initial_path.sub(/\/+$/, "")
     @data = {}
-    @initial_path = initial_path
 
     create_markdown_parser
   end

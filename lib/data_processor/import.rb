@@ -2,10 +2,11 @@ class DataProcessor
   module Import
 
     def import(path="", data_obj=nil)
-      path = path.sub(/^\//, "")
+      path = path.sub(/^\/+/, "")
+      path = path.sub(/\/+$/, "")
 
       data_hash = data_obj || @data
-      full_path = @initial_path + path
+      full_path = File.join(@initial_path, path)
 
       Dir.foreach(full_path) do |filename|
         next if filename[0] == "."
