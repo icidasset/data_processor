@@ -85,7 +85,6 @@ d.output_json # json
 
 ```ruby
 # Gemfile
-
 gem 'data_processor'
 ```
 
